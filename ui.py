@@ -3,7 +3,7 @@ from PyQt5.QtWidgets import (QApplication, QWidget,
                                QMessageBox, QPlainTextEdit, 
                                QHBoxLayout, QLineEdit, 
                                QComboBox, QLabel)
-from PyQt5.QtGui import QIcon # icon을 추가하기 위한 라이브러리
+from PyQt5.QtGui import QIcon,QFont # icon을 추가하기 위한 라이브러리
 from PyQt5 import QtCore
 
 class View(QWidget):
@@ -14,6 +14,7 @@ class View(QWidget):
 
     def initUI(self):
         self.lbl1=QLabel('v2.3.0',self)
+        self.lbl1.setFont(QFont('Consolas',10))
         self.btn1=QPushButton('Calc',self) # 버튼추가
         self.btn2=QPushButton('Clear',self) # 버튼2 추가
 
