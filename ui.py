@@ -1,4 +1,8 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QPushButton, QVBoxLayout, QMessageBox, QPlainTextEdit, QHBoxLayout, QLineEdit, QComboBox
+from PyQt5.QtWidgets import (QApplication, QWidget, 
+                             QPushButton, QVBoxLayout,
+                               QMessageBox, QPlainTextEdit, 
+                               QHBoxLayout, QLineEdit, 
+                               QComboBox, QLabel)
 from PyQt5.QtGui import QIcon # icon을 추가하기 위한 라이브러리
 from PyQt5 import QtCore
 
@@ -9,6 +13,7 @@ class View(QWidget):
         self.initUI()
 
     def initUI(self):
+        self.lbl1=QLabel('v2.3.0',self)
         self.btn1=QPushButton('Calc',self) # 버튼추가
         self.btn2=QPushButton('Clear',self) # 버튼2 추가
 
@@ -27,6 +32,9 @@ class View(QWidget):
         # self.cb.addItems(['+', '-', '*', '/', '^','%']) 
         self.cb.addItems(['+', '-', '*', '/']) # ^와 % 연산자 제거
 
+        
+        
+
         hbox_formular = QHBoxLayout()
         hbox_formular.addWidget(self.le1)
         hbox_formular.addWidget(self.cb)
@@ -34,6 +42,7 @@ class View(QWidget):
 
         hbox=QHBoxLayout()
         hbox.addStretch(1)
+        hbox.addWidget(self.lbl1)
         hbox.addWidget(self.btn1)
         hbox.addWidget(self.btn2)
 
